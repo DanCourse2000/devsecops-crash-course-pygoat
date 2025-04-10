@@ -40,4 +40,4 @@ jobs:
       with:
         name: Bandit-findings
         path: bandit-report.json
-
+#This json file can then be uploaded and viewed as a UI
