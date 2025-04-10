@@ -21,4 +21,4 @@ jobs:
       run: pip install bandit
 #Run bandit and scan all python files
     - name: Run Bandit Scan CLI
-      run: bandit -r .
+      run: bandit -ll -ii -r .
