@@ -10,10 +10,10 @@ jobs:
 #Below checkouts the code into above system
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4.2.2
 #Installs python as needed for specific code that was checked out
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5.5.0
       with: 
         python-version: 3.8
 #Python package installation using CLI
