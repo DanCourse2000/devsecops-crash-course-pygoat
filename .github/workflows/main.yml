@@ -35,7 +35,7 @@ jobs:
 #Upload Artifact uploads the findings outside of the test env before its destroyed
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: Bandit-findings
