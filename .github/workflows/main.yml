@@ -10,7 +10,7 @@ jobs:
 #Below checkouts the code into above system
     steps:
     - name: Checkout code
-      uses: action/checkout@v2
+      uses: actions/checkout@v2
 #Installs python as needed for specific code that was checked out
     - name: Set up Python
       uses: actions/setup-python@v2
