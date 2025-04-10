@@ -6,24 +6,34 @@ jobs:
   sast_scan:
     name: Run Bandit scan
     runs-on: Ubuntu-latest
+    
 #Above chooses what system to run on
 #Below checkouts the code into above system
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4.2.2
+      
 #Installs python as needed for specific code that was checked out
+
     - name: Set up Python
       uses: actions/setup-python@v5.5.0
       with: 
         python-version: 3.8
+        
 #Python package installation using CLI
+
     - name: Install Bandit
       run: pip install bandit
+      
 #Run bandit and scan all python files - specific confidence / severity can be filtered as per the -ll and -ii from the website
+
     - name: Run Bandit Scan CLI
       run: bandit -ll -ii -r . -f json -o bandit-report.json
+      
 #If always means it will always run the below step even if a previous fails to prevent skipping. 
 #Upload Artifact uploads the findings outside of the test env before its destroyed
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       if: always()
